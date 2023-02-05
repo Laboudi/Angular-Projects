@@ -1,0 +1,60 @@
+.login{
+  position:absolute;
+  right: 10px;
+  font-size: 25px;
+}
+.img{
+  width: 80px;
+  height: 60px;
+  border-radius: 50%;
+  position:absolute;
+  left: 10px;
+}
+h3{
+  position: absolute;
+  left: 100px;
+}
+.navbar{
+  height: 80px;
+}
+.login:hover{
+  color:#31599C ;
+  text-decoration: underline;
+}
+.image{
+  margin-top: -20px;
+  height:520px;
+  width: 1380px;
+  border-bottom-right-radius: 50%;
+}
+.footer{
+  background-color: #005999;
+  height: 200px;
+}
+.h4{
+  color:white;
+}
+.mat-icon{
+  margin-top: 40px;
+  margin-left: 10px;
+  color: aliceblue;
+}
+.copy{
+  margin-top: 120px;
+  color: white;
+}
+section{
+  margin-top: -20px;
+}
+h4{
+  margin-left: 170px;
+  font-size: 30px;
+}
+p{
+  font-size: large;
+}
+.i{
+  margin-top: 5px;
+  margin-left: 30px;
+  width:400px;
+}

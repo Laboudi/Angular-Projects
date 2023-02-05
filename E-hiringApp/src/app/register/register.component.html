@@ -1,0 +1,41 @@
+<div class="header"></div>
+<div class="loginPage">
+<mat-card class="card">
+  <mat-card-content class="d-flex">
+    <img mat-card-image src="./assets/registration.jpg" alt="image">
+    <div class="form">
+    <h1>Register</h1>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <div class="form-group mt-2">
+        <label for="userFirstName">First Name</label><br>
+        <input type="text" matInput ngModel id="userFirstName" name="userFirstName" placeholder="Enter your FirstName">
+      </div>
+      <div class="form-group mt-2">
+        <label for="userLastName">Last Name</label><br>
+        <input type="text" matInput ngModel name="userLastName" placeholder="userLastName" id="enter your lastname" >
+      </div>
+      <div class="form-group mt-2">
+        <label for="Email">Email</label><br>
+        <input type="email" matInput ngModel name="email" placeholder="Email" id="Email" >
+      </div>
+      <div class="form-group mt-2">
+        <label for="companyName">Company Name</label><br>
+        <input type="text" matInput ngModel name="companyName" placeholder="enter your company name " id="companyName">
+      </div>
+      <div class="form-group mt-2">
+        <label for="userName">User Name</label><br>
+        <input type="text" matInput ngModel name="userName" placeholder="enter a user name" id="userName">
+      </div>
+      <div class="form-group mt-4">
+        <label for="userPassword">Password</label><br>
+        <input type="text" matInput ngModel name="userPassword" placeholder="enter password" id="userPassword">
+      </div>
+      <div class="button mt-5">
+        <button type="submit" mat-raised-button>Register</button>
+      </div>
+    </form>
+  </div>
+  </mat-card-content>
+</mat-card>
+</div>
+<div class="footer"></div>

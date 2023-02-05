@@ -1,0 +1,30 @@
+
+.card{height:470px;margin-left:170px;width:460px;padding: 20px 30px;margin-top:60px;border: none !important;box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)}
+input{
+  height: 40px;
+  width: 300px;
+  border-radius:5px;
+  border: 1px solid gray;
+  font-size:13px;
+}
+button{
+  height: 40px;
+  width: 300px;
+  border-radius:5px;
+  border: 1px solid gray;
+  font-size:18px;
+  text-transform: uppercase;
+}
+label{
+  font-size: 15px;
+  position: absolute;
+  left:80px;
+}
+h3{
+  font-size:25px;
+}
+.container-fluid{
+  margin-top: -22px;
+  background-color: #1560A7;
+  height:567px;
+}

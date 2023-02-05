@@ -1,0 +1,16 @@
+<div class="header">
+  <nav class="navbar navbar-light d-flex bg-light">
+    <a class="navbar-brand candidate btn btn-group" *ngIf="userService.roleMatch(['ADMIN'])"   routerLink="/createCandidate">
+      Add candidate
+    </a>
+    <a class="navbar-brand client btn btn-group" *ngIf="userService.roleMatch(['ADMIN'])"  routerLink="/createClient">
+      Add client
+    </a>
+    <a class="navbar-brand list btn btn-group" *ngIf="userService.roleMatch(['ADMIN']) || userService.roleMatch(['USER'])" routerLink="/candidates">
+      Candidate list
+    </a>
+    <a class="navbar-brand logout btn btn-group" (click)="logout()">
+      Logout
+    </a>
+  </nav>
+</div>

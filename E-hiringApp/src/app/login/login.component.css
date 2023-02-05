@@ -1,0 +1,73 @@
+
+.loginPage{
+  background-color: #1560A7;
+
+}
+input:hover,input:focus,:hover, button:focus {
+  outline: none;
+}
+
+.header{
+  height: 85px;
+  background-color:#1560A7;
+}
+.footer{
+  background-color:#1560A7;
+  height: 90px;
+}
+img{
+  width:400px;
+  height: 440px;
+  margin-left: 1rem;
+}
+.card{
+  display:flex;
+  margin: auto;
+  width:800px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 12px 18px 0 rgba(58, 54, 54, 0.2);
+}
+h1{
+  margin-left: 60px;
+  font-size: 30px;
+}
+.form{
+  width: 300px;
+  height:440px;
+  margin-top: 55px;
+  margin-left: 5rem;
+}
+input{
+  width:250px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid grey;
+  box-shadow: 0 12px 18px 0 rgba(58, 54, 54, 0.2);
+  font-size: 15px;
+}
+button{
+  width:250px;
+  height: 45px;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background-color: #3950EA;
+  color: #FFFEFF;
+  box-shadow: 0 12px 18px 0 rgba(58, 54, 54, 0.2);
+  font-size: 15px;
+}
+section{
+  color: #58616A;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+label{
+  font-size: 18px;
+}
+.link{
+  font-size: 14px;
+}
+a{
+  text-decoration: none;
+}

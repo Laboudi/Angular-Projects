@@ -1,0 +1,31 @@
+.candidate{
+  position: absolute;
+  left: 10px;
+  font-size:18px;
+}
+.client{
+  position: absolute;
+  left: 150px;
+  font-size:18px;
+}
+.list{
+  position: absolute;
+  left: 250px;
+  font-size:18px;
+}
+.logout{
+  position: absolute;
+  right: 10px;
+  font-size:18px;
+}
+.candidate:hover,.client:hover,.list:hover{
+  color: #31599C;
+  text-decoration: underline;
+}
+.logout:hover{
+  color: #31599C;
+  text-decoration:wavy;
+}
+.navbar{
+  height: 60px;
+}

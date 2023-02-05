@@ -1,0 +1,54 @@
+
+.tab{
+  box-shadow: 6px 12px 18px 10px rgba(58, 54, 54, 0.2);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+table {
+  width: 100%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.list{
+  position: absolute;
+  left: 10px;
+  font-size:18px;
+}
+.logout{
+  position: absolute;
+  right: 10px;
+  font-size:18px;
+}
+.list:hover{
+  color: #31599C;
+  text-decoration: underline;
+}
+.logout:hover{
+  color: #31599C;
+  text-decoration:wavy;
+}
+.navbar{
+  height: 60px;
+}
+.select{
+  width:7rem;
+}
+select{
+  border-bottom: 1px solid gray;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-radius: 0px;
+}
+button{
+  margin-left: 10px;
+}
+input{
+  border-bottom: 1px solid gray;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-radius: 0px;
+  width:15rem;
+  height: 22.5px;
+}
+

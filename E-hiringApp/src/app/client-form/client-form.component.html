@@ -1,0 +1,98 @@
+<!--<div class="clientPage">
+<div class="mt-5">
+  <h2>Client Registration</h2>
+</div>
+<div class="container-fluid mt-4 col-6">
+<form (ngSubmit)="onSubmit()" #Form="ngForm">
+    <div class="form-group">
+      <label for="companyName">Company name</label>
+      <input type="text" class="form-control" id="companyName" name="companyName" [(ngModel)]="client.nameOfCompany" required #companyName="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="phone">Company phone</label>
+      <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="client.companyPhone" required #phone="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="email">Company email</label>
+      <input type="email" class="form-control" id="email" name="profile" [(ngModel)]="client.companyEmail" required #email="ngModel">
+    </div>
+    <div class="form-group">
+        <label for="logo">Company Logo</label>
+        <input type="file" class="form-control-file" id="logo" name="logo"  [(ngModel)]="client.logo" required #logo="ngModel">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!Form.form.valid">Register</button>
+</form>
+</div>
+</div>
+-->
+<!--<div class="container-fluid mt-3 pt-3 pb-3 py-4 mx-auto">
+  <div class="row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <h3>Registeration Form</h3>
+          <div class="card">
+              <form class="form-card" (ngSubmit)="onSubmit()" #Form="ngForm">
+                  <div class="row justify-content-between text-left">
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label">Company name</label> <input type="text" id="companyName" name="companyName" [(ngModel)]="client.nameOfCompany" required #companyName="ngModel" placeholder="Nom de l'entreprise"> </div>
+
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label">Company phone</label>
+                    <input type="text" name="phone" id="phone" [(ngModel)]="client.companyPhone" required #phone="ngModel" placeholder="Numero de téléphone">
+                  </div>
+
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                      <label class="form-control-label">Company mail</label>
+                      <input type="email" id="email" name="profile" [(ngModel)]="client.companyEmail" required #email="ngModel" placeholder="Email">
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                      <label class="form-control-label ">Company logo</label>
+                      <input type="file" id="logo" name="logo"  [(ngModel)]="client.logo" required #logo="ngModel" placeholder="select a file" >
+                    </div>
+                  </div>
+                  <div class="row justify-content-between">
+                      <div class="form-group col-sm-6">
+                        <button type="submit" class="btn-block btn-primary" [disabled]="!Form.form.valid">Register</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>-->
+<app-navbar></app-navbar>
+<div class="container-fluid  mx-auto">
+  <div class="row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <div class="card">
+            <h3>Register client</h3>
+            <form class="form-card mt-5" (ngSubmit)="onSubmit()" #Form="ngForm">
+              <div class="form-group mt-2">
+                <label for="name">Company name</label>
+                <br><br>
+                <input type="text" id="companyName" name="companyName" [(ngModel)]="client.nameOfCompany" required #companyName="ngModel" placeholder="Nom de l'entreprise">
+              </div>
+              <div class="form-group mt-2">
+                <label for="phone">Phone number</label>
+                <br><br>
+                <input type="text" name="phone" id="phone" [(ngModel)]="client.companyPhone" required #phone="ngModel" placeholder="Numero de téléphone">
+              </div>
+              <div class="form-group mt-2">
+                <label for="email">Email</label>
+                <br><br>
+                <input type="email" id="email" name="email" [(ngModel)]="client.companyEmail" required #email="ngModel" placeholder="Email">
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Save client</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+

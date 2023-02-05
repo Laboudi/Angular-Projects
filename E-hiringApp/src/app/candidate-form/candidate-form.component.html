@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container-fluid pb-3  pt-3 py-4 mx-auto">
+  <div class="row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <div class="card">
+            <h3 class="text-center">Register Candidate</h3>
+              <form class="form-card" class="mt-3" (ngSubmit)="onSubmit()" #Form="ngForm">
+                  <div class="row justify-content-between text-left">
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name</label> <input type="text" id="prenom" name="prenom" [(ngModel)]="candidate.firstName" #firstName="ngModel" required placeholder="first name"> </div>
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name</label> <input type="text" id="nom" name="nom" [(ngModel)]="candidate.lastName" #lastName="ngModel" required placeholder="last name " ></div>
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Profile</label> <input type="text" id="profile" name="profile" [(ngModel)]="candidate.profil" required #profil="ngModel" placeholder="profile"> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Actual company</label> <input type="text" id="entrepriseActuel" name="entrepriseActuel" [(ngModel)]="candidate.entrepriseActuel" required #entreprise="ngModel" placeholder="Actual company" ></div>
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Current salary</label> <input type="text" id="salireActuel" name="salaireActuel" [(ngModel)]="candidate.salaireActuel" required #salaireAct="ngModel" placeholder="current salary"> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Seniority</label> <input type="text" id="anciennete" name="anciennete" [(ngModel)]="candidate.anciennete" required #anciennete="ngModel" placeholder="Seniority" ></div>
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Salary expectation</label> <input type="text" id="pretentionSalariale" name="pretentionSalariale" [(ngModel)]="candidate.pretentionSalaire" required #pretentionSalariale="ngModel" placeholder="Salary expectation"> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Contract</label> <input type="text" id="contrat" name="contrat" [(ngModel)]="candidate.contrat" required #contrat="ngModel" placeholder="Contract" ></div>
+                  </div>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">City</label> <input type="text" id="ville" name="ville" [(ngModel)]="candidate.ville" required #ville="ngModel" placeholder="City"> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">CV</label> <input type="file" id="cv" name="cv"  required  (change)="onSelectFile($event)" placeholder="select a file" ></div>
+                  </div>
+                  <div class="row justify-content-center">
+                      <div class="form-group col-sm-6"> <button type="submit" class="btn-block" [disabled]="!Form.form.valid">Save candidate</button> </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="footer"></div>
+

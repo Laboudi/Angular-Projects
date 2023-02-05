@@ -1,0 +1,252 @@
+
+<!--<app-navbar></app-navbar>
+  .container-fluid{
+  position: relative;
+  top:30px;
+  margin-left: 80px;
+  margin-right: auto;
+  overflow:scroll;
+  border-radius: 8px;
+  size: 200rem;
+  height:50rem;
+  width: 120rem;
+}
+thead{
+  background-color: #3F51B5;
+  color:black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.table{
+  border: #000000;
+}
+.pres{
+  margin-top:2rem;
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+  background-color:#3F51B5;
+}
+#comment{
+  margin-top: 2rem;
+  height: 30px;
+  width: 100px;
+}
+.download{
+  background-color:  #3F51B5;
+}
+.add{
+  margin-top: 150px;
+
+}
+
+<div class="container-fluid mt-5">
+  <table class="table table-bordered">
+    <thead class="bg-light text-center">
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prenom</th>
+          <th scope="col">Profile</th>
+          <th scope="col">Entreprise Actuelle</th>
+          <th scope="col">Salaire Actuel</th>
+          <th scope="col">pretention salariale</th>
+          <th scope="col">Contrat</th>
+          <th scope="col">Anciennete</th>
+          <th scope="col">ville</th>
+          <th scope="col">Cv</th>
+          <th scope="col">preselection</th>
+          <th scope="col">DecisionRh</th>
+          <th scope="col">DecisionTech</th>
+          <th scope="col">Decision Finale</th>
+          <th scope="col">Commentaire</th>
+        </tr>
+    <tbody>
+      <tr *ngFor="let candidate of candidates" rowSelection='single'>
+        <td>{{candidate.firstName}}</td>
+        <td>{{candidate.lastName}}</td>
+        <td>{{candidate.profil}}</td>
+        <td>{{candidate.entrepriseActuel}}</td>
+        <td>{{candidate.salaireActuel}}</td>
+        <td>{{candidate.pretentionSalaire}}</td>
+        <td>{{candidate.contrat}}</td>
+        <td>{{candidate.anciennete}}</td>
+        <td>{{candidate.ville}}</td>
+        <td><button class="btn btn-primary download" (click)="download(9)"><mat-icon>download</mat-icon></button></td>
+        <td>
+          <div>
+          <select [(ngModel)]="candidate.preselection" (change)="onChangePreselection(candidate.preselection,candidate.id)"  class="form-select form-select-lg mb-3" id="preselection" aria-label=".form-select-lg example" #preselection="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+      </div>
+        <p mt-2>{{candidate.preselection}}</p>
+        </td>
+        <td>
+          <div class="d-flex">
+          <select  [(ngModel)]="candidate.decisionRh" (change)="onChangeDecisionRh(candidate.decisionRh,candidate.id)"   class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionRh="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+      </div>
+        <p mt-2>{{candidate.decisionRh}}</p>
+        </td>
+        <td>
+          <div class="d-flex">
+          <select  [(ngModel)]="candidate.decisionTech" (change)="onChangeDecisionTech(candidate.decisionTech,candidate.id)" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionTech="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+       </div>
+        <p mt-2>{{candidate.decisionTech}}</p>
+        </td>
+        <td>
+          <div class="d-flex">
+          <select  [(ngModel)]="candidate.decisionFinal" (change)="onChangeDecisionFinal(candidate.decisionFinal,candidate.id)" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionFinal="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+      </div>
+        <p mt-2>{{candidate.decisionFinal}}</p>
+        </td>
+        <td>
+          <div class="d-flex">
+            <input type="text" class="form-control" id="comment" comment placeholder="enter a comment" [(ngModel)]="candidate.comment"  #comment="ngModel">
+            <button type="submit" (click)="onChangeComment(candidate.comment,candidate.id)"  class="btn btn-primary pres" >Ok</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+['FirstName','LastName','Profile','CurrentCompany','Seniority','CurrentSalary','SalaryExpectation','Contract','City','Cv','Preselection','RHDecision','TechDecision','FinalDecision'];
+-->
+<app-navbar *ngIf="userService.roleMatch(['ADMIN'])"></app-navbar>
+  <div class="header" *ngIf="userService.roleMatch(['USER'])">
+    <nav class="navbar navbar-light d-flex bg-light">
+      <a class="navbar-brand list btn btn-group" *ngIf="userService.roleMatch(['ADMIN']) || userService.roleMatch(['USER'])" routerLink="/candidates">
+        Candidate list
+      </a>
+      <a class="navbar-brand logout btn btn-group" (click)="logout()">
+        Logout
+      </a>
+    </nav>
+  </div>
+<div class="mat-elevation-z8 tab">
+  <table mat-table [dataSource]="dataSource" >
+    <ng-container matColumnDef="FirstName">
+      <th mat-header-cell *matHeaderCellDef>First name</th>
+      <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LastName">
+      <th mat-header-cell *matHeaderCellDef>Last name</th>
+      <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Profile">
+      <th mat-header-cell *matHeaderCellDef>Profile</th>
+      <td mat-cell *matCellDef="let element">{{element.profil}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="CurrentCompany">
+      <th mat-header-cell *matHeaderCellDef> Currenet company</th>
+      <td mat-cell *matCellDef="let element">{{element.entrepriseActuel}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Seniority">
+      <th mat-header-cell *matHeaderCellDef>Seniority</th>
+      <td mat-cell *matCellDef="let element">{{element.anciennete}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="CurrentSalary">
+      <th mat-header-cell *matHeaderCellDef>Current Salary</th>
+      <td mat-cell *matCellDef="let element">{{element.salaireActuel}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="SalaryExpectation">
+      <th mat-header-cell *matHeaderCellDef>Salary Expectation</th>
+      <td mat-cell *matCellDef="let element">{{element.pretentionSalaire}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Contract">
+      <th mat-header-cell *matHeaderCellDef>Contract</th>
+      <td mat-cell *matCellDef="let element">{{element.contrat}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="City">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let element">{{element.ville}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Preselection">
+      <th mat-header-cell *matHeaderCellDef>Preselection</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="select">
+          <select [(ngModel)]="element.preselection" (change)="onChangePreselection(element.preselection,element.id)"  class="form-select form-select-lg mb-3" id="preselection" aria-label=".form-select-lg example" #preselection="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="RHDecision">
+      <th mat-header-cell *matHeaderCellDef>RH Decision</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="select">
+          <select  [(ngModel)]="element.decisionRh" (change)="onChangeDecisionRh(element.decisionRh,element.id)" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionTech="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+       </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TechDecision">
+      <th mat-header-cell *matHeaderCellDef>Tech Decision</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="select">
+          <select  [(ngModel)]="element.decisionTech" (change)="onChangeDecisionTech(element.decisionTech,element.id)" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionTech="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+       </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FinalDecision">
+      <th mat-header-cell *matHeaderCellDef>Final Decision</th>
+      <td mat-cell *matCellDef="let element">
+          <div class="select">
+          <select  [(ngModel)]="element.decisionFinal" (change)="onChangeDecisionFinal(element.decisionFinal,element.id)" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #decisionFinal="ngModel">
+            <option *ngFor="let item of selectItems">
+                {{ item }}
+            </option>
+        </select>
+      </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Comment">
+      <th mat-header-cell *matHeaderCellDef>Comment</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="d-flex">
+          <input type="text" class="form-control" id="comment" comment placeholder="enter a comment" [(ngModel)]="element.comment"  #comment="ngModel">
+          <button type="submit" (click)="onChangeComment(element.comment,element.id)"  class="btn btn-dark pres" >Ok</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
